@@ -1,25 +1,29 @@
 <template lang="html">
   <select v-on:change="handleChange" v-model="selectedArticle">
-    <option v-for="article in articles" :value="article">{{article.title}}</option>
+    <option v-for="article in articles" :value="article">{{article.webTitle}}</option>
   </select>
 </template>
 
 <script>
-  import { eventBus } from '../main'
+import ListComponent from './ListComponent'
+// import { eventBus } from '../main'
 
 export default {
   name: "articles-list",
-  data() {
-    return {
-      'selectedArticle': {}
-    }
-  },
+  // data() {
+  //   return {
+  //     'selectedArticle': {}
+  //   }
+  // },
   props: ["articles"],
-  methods: {
-    handleChange() {
-      eventBus.$emit('article-selected', this.selectedArticle)
-    }
+  components: {
+    "list-component": ListComponent
   }
+  // methods: {
+  //   handleChange() {
+  //     eventBus.$emit('article-selected', this.selectedArticle)
+  //   }
+  // }
 }
 </script>
 

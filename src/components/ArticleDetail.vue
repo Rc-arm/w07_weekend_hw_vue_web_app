@@ -1,6 +1,6 @@
 <template>
   <article v-if="article">
-    <h3>{{article.name}}</h3>
+    <h3>{{article.webTitle}}</h3>
     <div>
       <p>Article details go here</p>
     </div>

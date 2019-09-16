@@ -25,8 +25,7 @@ export default {
     "article-detail": ArticleDetail
   },
   mounted(){
-    // fetch('https://www.reddit.com/r/javascript.json')
-    fetch('https://restcountries.eu/rest/v2/all')
+    fetch('https://content.guardianapis.com/search?q=brexit&format=json&api-key=test')
     .then(result => result.json())
     .then(articles => this.articles = articles)
 
